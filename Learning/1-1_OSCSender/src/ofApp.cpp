@@ -1,5 +1,6 @@
 #include "ofMain.h"
 #include "ofxOsc.h"
+#include <iostream>
 
 class ofApp : public ofBaseApp {
     ofxOscSender sender;
@@ -17,6 +18,7 @@ public:
     }
     
     void keyPressed(int key) {
+        std::cout << key << std::endl;
         switch(key) {
             case 'd': {
                 ofxOscMessage m;
