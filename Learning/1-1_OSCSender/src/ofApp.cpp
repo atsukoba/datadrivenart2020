@@ -6,7 +6,7 @@ class ofApp : public ofBaseApp {
     ofxOscSender sender;
 public:
     void setup() {
-        sender.setup("localhost", 26666);
+        sender.setup("133.24.83.240", 26666);
         ofSetWindowPosition(0, 0);
         ofSetWindowTitle("OscSender");
     }

@@ -11,7 +11,7 @@ class ofApp : public ofBaseApp {
     ScreenConsole console;
 public:
     void setup() {
-        receiver.setup(26666);
+        receiver.setup(5050);
         ofSetWindowPosition(360, 0);
         ofSetWindowTitle("OscReceiver");
     }
