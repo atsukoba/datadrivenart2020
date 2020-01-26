@@ -11,24 +11,25 @@ class Generator:
 
     def __init__(self, model, weights_file):
         self.model = model
-        checkpoint = torch.load(weights_file)
-        self.model.load_state_dict(checkpoint["model_state_dict"])
+        self.model.load_state_dict(torch.load(weights_file))
 
-    def generate(self, z: "numpy.ndarray", base64=False) -> "numpy.ndarray":
+    def generate(self, z: list, use_base64=False) -> "numpy.ndarray":
         with torch.no_grad():
-            samples = self.model.decode(z).cpu()
-        
-        print(f"images generated! with shape{sample.size()}")
+            samples = self.model.decode(
+                torch.Tensor(z).cpu())
+
+        print(f"images generated! with shape{samples.size()}")
 
         transformer = transforms.ToPILImage()
 
-        if base64:
-            buffered = BytesIO()
+        if use_base64:
             base64str_images = []
             for sample in samples:
+                buffered = BytesIO()
                 image = transformer(sample).convert("RGB")
+                print(type(image))
                 image.save(buffered, format="JPEG")
-                base64str_images.append(base64.b64encode(buffered.getvalue()))
+                base64str_images.append(base64.b64encode(buffered.getvalue()).decode('utf-8'))
             return base64str_images
         return [transformer(t).convert("RGB") for t in samples]
 
