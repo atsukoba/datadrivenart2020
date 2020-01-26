@@ -1,0 +1,30 @@
+$black: #606c76;
+$white: #fefefe;
+$main: #9b4dca;
+
+$vertical-margin: 20px;
+$side-margin: 30px;
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: linear-gradient(45deg, #3a000c, #000938);
+
+  img {
+    width: 50vw;
+    height: 50vw;
+  }
+
+  form {
+    margin: 2.5rem auto;
+  }
+
+  ul#messages {
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+}

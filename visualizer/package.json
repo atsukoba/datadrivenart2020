@@ -1,0 +1,33 @@
+{
+  "name": "osc-webapp",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node ./app.js",
+    "dev": "gulp"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "cors": "^2.8.5",
+    "date-utils": "^1.2.21",
+    "debug": "~2.6.9",
+    "ejs": "^2.7.4",
+    "express": "~4.16.1",
+    "gulp": "^4.0.2",
+    "gulp-express": "^0.3.5",
+    "gulp-sass": "^4.0.2",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1",
+    "ngrok": "^3.2.7",
+    "node-osc": "^4.1.4",
+    "qrcode": "^1.4.4",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-eslint": "^6.0.0",
+    "gulp-sourcemaps": "^2.6.5"
+  }
+}

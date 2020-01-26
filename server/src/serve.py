@@ -22,7 +22,7 @@ def generate():
     """
 
     """
-    z: list = request.file.z
+    z: list = request.json.z
     images: list = G.generate(np.array(z), base64=True)
     data = {
         "base64": images
